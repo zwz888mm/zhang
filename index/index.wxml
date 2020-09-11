@@ -1,0 +1,13 @@
+ <image mode="widthFix" src="http://why1314.com/22.png"></image>
+ <input class="inputbox" placeholder="请输入城市名 例：北京市朝阳区" bindinput="handleInput" />
+ <button class="inputbutton" bindtap="handleSearch" size="mini">搜索</button>
+
+
+
+ <view wx:if="{{name && address && iid && orgPhone}}">当前选择的是：{{name}}, id为：{{iid}}, 位置为：{{address}},电话：{{orgPhone}}</view>
+ <view class="content" wx:for="{{paramList}}" wx:key="index" data-iid="{{item.iid}}" data-name="{{item.orgName}}" data-address="{{item.orgAddress}}" data-orgPhone="{{item.orgPhone}} " bindtap="handleClick">
+ 	<view>检测机构：{{item.orgName}}</view>
+ 	<view>地址：{{item.orgAddress}}</view>
+ 	<text>电话：</text><text>{{item.orgPhone}}</text>
+ 	<view>——————————————</view>
+ </view>
